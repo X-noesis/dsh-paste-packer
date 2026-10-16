@@ -1,0 +1,13 @@
+# ============================================================================
+# dsh-paste-packer —— DSH bundle patch
+# ============================================================================
+# 这是插件的"挂载声明"。DSH 启动时按 bundle 层栈叠加各插件的 patch，
+# 本文件把粘贴打包插件插入 profile 的配置树。
+#
+# 安装方式（不需要手工改 profile 的 package.json / cordis.patch.yml）：
+#   让 Agent 调用 plugin_manager install_bundle，target 指向本目录绝对路径。
+# ============================================================================
+
+- insert:
+    - id: dsh-paste-packer
+      name: dsh-paste-packer

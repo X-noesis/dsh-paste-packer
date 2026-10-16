@@ -1,0 +1,44 @@
+{
+  "name": "dsh-paste-packer",
+  "version": "0.1.0",
+  "description": "DSH（DeepSeek Harness）粘贴打包插件：超过 20 行的粘贴文本自动折叠成输入框上方的一张卡片，可就地预览原文、解包回输入框，发送时自动还原全文。Web 版与桌面版通用。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "paste",
+    "composer",
+    "clipboard"
+  ],
+  "type": "module",
+  "author": "X-noesis",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "icon": "./icon.svg",
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "license": "MIT"
+}
